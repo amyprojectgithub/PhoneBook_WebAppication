@@ -1,0 +1,72 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</head>
+<body>
+	<h2 style="color: orange; text-align: center">:::::::::Contact	Info:::::::</h2>
+	<h2 style="color: green; text-align: center">  ${succMsg}  </h2>
+	<h2 style="color: red; text-align: center">  ${errorMsg}  </h2>
+	<form:form action="${pageContext.request.contextPath}/contactInfo/saveContact" method="POST" modelAttribute="contact">
+		<table align="center">
+		<tr> <td><form:hidden path="conatctId"/></td></tr>
+			<tr>
+				<td>Contact Name</td>
+				<td><form:input path="contactName"/></td>
+				<td><span id="nameError"></span></td>
+			</tr>
+			<tr>
+				<td>EmailId</td>
+				<td><form:input path="contactEmail"/></td>
+				<td><span id="emailError"></span></td>
+			</tr>
+			<tr>
+				<td>Contact No</td>
+				<td><form:input path="contactNo"/></td>
+				 <td><span id="contactError"></span></td> 
+			</tr>
+			<tr>
+				<td><input type="submit"  value="SAVE CONTACT" id="saveMe"></td>
+				<td><input type="reset" value="CLEAR"  ></td>
+			</tr>
+		</table>
+	</form:form>
+	<h3 style="text-align: center"><a href="${pageContext.request.contextPath}/contactInfo/viewAll">VIEW ALL CONTACTS</a></h3>
+</body>
+ <script>
+   $(document).ready(function(){
+	   //hide the error section
+    $("#nameError").hide();
+     //define the error variable
+     var nameError=false;
+     //validate function definition
+     function validate_name(){
+       //read the value
+       var val=$("#contactName").val();
+       //validate name
+       if(val==''){
+        $("#nameError").show();
+        $("#nameError").html("<i>Contact Name field is required.</i>");
+        $("#nameError").css("color","red");
+        nameError=false;
+       }else{
+        $("#nameError").hide();
+        nameError=true;
+       }
+       return nameError;
+     }
+    //link action event
+    $("#contactName").keyup(function(){
+      validate_name();
+    });
+
+   });
+
+  </script>
+
+</html>

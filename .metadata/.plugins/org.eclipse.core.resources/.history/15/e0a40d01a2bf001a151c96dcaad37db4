@@ -1,0 +1,53 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>My Contact lists</title>
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables_themeroller.css">
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready( function () {
+                 $('#contactTab').DataTable();
+           } );
+
+      	function deleteConfirm(){
+      		return confirm("Are you sure, You want to delete this contact permanently?");
+      	}
+  </script>
+</head>
+<body>
+    <h3 ><a href="home">+Add contact</a></h3>
+		 <table  border="1" id="contactTab" cellspacing="0" width="100%">
+	              <thead>
+		                   <tr>
+			                                <th>S.NO</th>
+			                                <th>CONTACT NAME</th>
+			                                <th>EMAIL ID</th>
+			                                <th>CONTACT NO</th>
+			                                <th>CREATED DATE</th>
+			                                <th>UPDATED DATE</th>
+			                                <th colspan="2">ACTIONS</th>
+		                   </tr>
+	               </thead>	
+	               <tbody>
+                            <c:forEach items="${contactList}" var="contact" varStatus="index">
+                             <tr>
+                                          <td>${index.count }</td>
+                                          <td>${contact.contactName}</td>
+                                          <td>${contact.contactEmail}</td>
+                                          <td>${contact.contactNo}</td>
+                                          <td>${contact.createdDate}</td>
+                                          <td>${contact.updatedDate}</td>
+                                          <td><a href="${pageContext.request.contextPath}/viewContact/editContact?id=${contact.conatctId }">EDIT</a></td>
+                                          <td><a href="${pageContext.request.contextPath}/viewContact/deleteContact?id=${contact.conatctId }" onclick=" return deleteConfirm()">DELETE</a></td>
+                             </tr>
+                           </c:forEach>
+                  </tbody>
+         </table>
+</body>
+</html>

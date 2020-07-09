@@ -1,0 +1,27 @@
+package com.ashokit.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ashokit.model.Contact;
+
+@Controller
+@RequestMapping("/viewContact")
+public class ViewContactsController {
+	@GetMapping("/editContact")
+	public String editMe(Model model) {
+		return "contact";
+	}
+	@PostMapping("/updateContact")
+	public String updateMe(@ModelAttribute("contact") Contact contact) {
+		return "viewContacts";
+	}
+	@GetMapping("/deleteContact")
+	public String deleteMe(Model model) {
+		return "viewContacts";
+	}
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=PhoneBook_WebAppication/C:\/Users\/comp\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/2.3.1.RELEASE\/spring-data-jpa-2.3.1.RELEASE.jar=/maven.pomderived=/true=/=/org.eclipse.jst.component.dependency=/\/WEB-INF\/lib=/=/maven.pomderived=/true=/=/org.eclipse.jst.component.archivename=/spring-data-jpa-2.3.1.RELEASE.jar=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-jpa=/=/maven.version=/2.3.1.RELEASE=/=/maven.scope=/compile=/&lt;org.springframework.data.jpa.repository(JpaRepository.class[JpaRepository" modifiers="1537" timestamp="1593334877313"/>
+<typeInfo handle="=PhoneBook_WebAppication/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.ashokit.controller{ContactInfoController.java[ContactInfoController" modifiers="1" timestamp="1594034097859"/>
+<typeInfo handle="=PhoneBook_WebAppication/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.ashokit.controller{ViewContactsController.java[ViewContactsController" modifiers="1" timestamp="1594018007441"/>
+<typeInfo handle="=PhoneBook_WebAppication/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.ashokit.model{Contact.java[Contact" modifiers="1" timestamp="1593668584750"/>
+<typeInfo handle="=PhoneBook_WebAppication/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.ashokit.service{ContactService.java[ContactService" modifiers="513" timestamp="1594017770123"/>
+</typeInfoHistroy>

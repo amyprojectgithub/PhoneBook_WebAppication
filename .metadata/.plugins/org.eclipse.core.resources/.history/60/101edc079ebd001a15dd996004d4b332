@@ -1,0 +1,28 @@
+package com.ashokit.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ashokit.model.Contact;
+
+@Controller
+@RequestMapping("/contactInfo")
+public class ContactInfoController {
+	@GetMapping(value = {"/","/home"})
+	public String loadForm(Model model) {
+		return "contact";
+	}
+	
+	@PostMapping("/saveContact")
+	public String handleSubmitButton(@ModelAttribute("contact") Contact contact,Model model) {
+		return "contact";
+	}
+	@GetMapping("/viewAll")
+	public String handleViewAllLink(Model model) {
+		return "viewContacts";
+	}
+}

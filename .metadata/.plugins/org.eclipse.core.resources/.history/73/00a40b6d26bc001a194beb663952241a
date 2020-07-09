@@ -1,0 +1,21 @@
+package com.ashokit.entity;
+
+import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name = "CONTACT_DTLS")
+public class ContactEntity {
+  @Id
+  private Integer conatctId;
+  private String contactName;
+  private String contactEmail;
+  private Long contactNo;
+  private Date createdDate;
+  private Date updatedDate; 
+}

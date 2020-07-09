@@ -1,0 +1,40 @@
+package com.ashokit.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.ashokit.model.Contact;
+import com.ashokit.repo.ContactRepository;
+
+@Service
+public class ContactServiceImpl implements ContactService {
+	@Autowired
+	private ContactRepository repo;
+
+	@Override
+	public boolean save(Contact contact) {		
+		return false;
+	}
+
+	@Override
+	public List<Contact> getAllContacts() {
+		return null;
+	}
+
+	@Override
+	public Contact getContactById(Integer id) {
+		return null;
+	}
+
+	@Override
+	public boolean updateContact(Contact contact) {
+		return false;
+	}
+
+	@Override
+	public boolean deleteContact(Integer id) {
+		return false;
+	}
+
+}
